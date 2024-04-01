@@ -7,6 +7,7 @@ import { CiHeart } from "react-icons/ci";
 import { IoMdHeart } from "react-icons/io";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { IoBookmark } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,9 +38,30 @@ const Home = () => {
       const updatedFavorites = [...favorites];
       updatedFavorites.splice(presentFavIndex, 1);
       setFavorites(updatedFavorites);
+      toast.warn("Removed Successfully", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      
     } else {
       // Item is not in favorites, add it
       setFavorites((prevFavorites) => [...prevFavorites, val]);
+          toast.success("Added Successfully", {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
     }
   };
 
