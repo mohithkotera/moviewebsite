@@ -6,7 +6,7 @@ import { IoMdHeart } from "react-icons/io";
 
 const MovieCard = ({ data,  icon, iconwishlist }) => {
   return (
-    <div className=" bg-transparent w-fit">
+    <div className=" bg-transparent w-fit cursor-pointer">
       <div className="h-60 min-w-60 max-w-72">
         <img
           src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
